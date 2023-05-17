@@ -19,9 +19,9 @@ pipeline {
                 """
             }
         }
-           parameters {
+        parameters {
         choice(name: 'BRANCH', choices: ['master', 'develop', 'feature'], description: 'Select the branch')
-    }
+         }
 
 
         stage('Code Checkout') {

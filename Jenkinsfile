@@ -8,6 +8,9 @@ pipeline {
                     numToKeepStr: '10'
             )
     }
+      parameters {
+        choice(name: 'BRANCH', choices: ['master', 'develop', 'feature'], description: 'Select the branch')
+    }
 
     stages {
         
@@ -19,9 +22,7 @@ pipeline {
                 """
             }
         }
-        parameters {
-        choice(name: 'BRANCH', choices: ['master', 'develop', 'feature'], description: 'Select the branch')
-         }
+
 
 
         stage('Code Checkout') {
